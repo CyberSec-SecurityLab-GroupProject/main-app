@@ -2,14 +2,13 @@ name: Terraform CI/CD Pipeline
 
 on:
   push:
-    branches: [ main, dev, feat/devops-sprint3-infrastructure ]
+    branches: [ main, dev, feat/security-sprint3, feat/devops-sprint3-infrastructure ]
   pull_request:
     branches: [ main, dev ]
 
 jobs:
   terraform:
     runs-on: ubuntu-latest
-
     steps:
       - name: Checkout code
         uses: actions/checkout@v4
@@ -25,8 +24,10 @@ jobs:
 
       - name: Terraform Init
         working-directory: terraform/envs/dev
-        run: terraform init -backend=false
+        run: terraform init -input=false
 
       - name: Terraform Validate
         working-directory: terraform/envs/dev
         run: terraform validate
+
+      
