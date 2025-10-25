@@ -1,4 +1,4 @@
-module "guardduty"  { source = "../../modules/guardduty" }
+module "guardduty" { source = "../../modules/guardduty" }
 module "cloudtrail" { source = "../../modules/cloudtrail" }
 
 module "waf_api" {
