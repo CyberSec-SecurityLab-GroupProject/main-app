@@ -35,7 +35,7 @@ data "aws_caller_identity" "me" {}
 resource "aws_s3_bucket_policy" "trail" {
   bucket = aws_s3_bucket.trail.id
   policy = jsonencode({
-    Version   = "2012-10-17",
+    Version = "2012-10-17",
     Statement = [
       {
         Sid       = "AWSCloudTrailAclCheck20150319",

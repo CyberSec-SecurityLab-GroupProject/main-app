@@ -17,7 +17,7 @@ resource "aws_sns_topic_subscription" "email" {
 resource "aws_cloudwatch_event_rule" "gd_findings" {
   name = "seclab-guardduty-findings"
   event_pattern = jsonencode({
-    "source"      : ["aws.guardduty"],
+    "source" : ["aws.guardduty"],
     "detail-type" : ["GuardDuty Finding"]
   })
 }
